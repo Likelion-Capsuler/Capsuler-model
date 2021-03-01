@@ -14,7 +14,12 @@ We used Inception V3 for Image Extraction and LSTM for Caption generation. Both 
 There are some required libraries and modules in order to run the code notebooks. We used the Google Colab environment, so please take in note that some of the codes may not work if you're running on an environment with differnt library versions.
 
 ```python
-  
+from tensorflow import keras
+from pillow import Image
+from gensim import models
+import matplotlib.pyplot as plt
+import numpy as np
+import opencv
 ```
 
 ## Datasets
@@ -22,6 +27,13 @@ There are some required libraries and modules in order to run the code notebooks
 ## Jupyter notebooks
 
 ## Results
+
+Image | Generated Caption
+--- | ---
+<img src="https://github.com/Likelion-Capsuler/Capsuler-model/blob/main/images/image1.png" width="250px"> | 
+<img src="https://github.com/Likelion-Capsuler/Capsuler-model/blob/main/images/image2.png" height="300px"> | 
+<img src="https://github.com/Likelion-Capsuler/Capsuler-model/blob/main/images/image3.png" width="250px"> | 
+
 
 ## Contributors
 <table>
