@@ -23,16 +23,37 @@ import opencv
 ```
 
 ## Datasets
+- Images & English Captions: <a href="https://cocodataset.org/#download">MS COCO</a>
+- Korean Captions: <a href="https://aihub.or.kr/keti_data_board/visual_intelligence">AI Hub</a>
 
 ## Jupyter notebooks
+### 01. Image Encoding
+- Resize every training & validation image to the following dimensions: (299,299)
+> This is necessary in order to fit and train the inception V3. 
+- Transfer the images into a np.array form.
+
+### 02. Image Captioning (Eng, Kor)
+- This notebook preprocesses every English/Korean caption using language embedding.
+- Delete all unnecessary special symbols in each caption.
+- Add 'STARTSEQ' and 'ENDSEQ' at the beggining and end of each caption for sequencing later on.
+- Use the following preconstructed vectors for each language:
+    - Glove for English
+    - Fasttext for Korean
+
+### 03. Video Captioning
+- Use OpenCV to capture frames from a given video file.
+- Decide how many fps to capture by resizing the numbers of the following code:
+```python
+vidcap.get(1)%30==0
+```
 
 ## Results
 
 Image | Generated Caption
 --- | ---
-<img src="https://github.com/Likelion-Capsuler/Capsuler-model/blob/main/images/image1.png" width="250px"> | 
-<img src="https://github.com/Likelion-Capsuler/Capsuler-model/blob/main/images/image2.png" height="300px"> | 
-<img src="https://github.com/Likelion-Capsuler/Capsuler-model/blob/main/images/image3.png" width="250px"> | 
+<img src="https://github.com/Likelion-Capsuler/Capsuler-model/blob/main/images/image1.png" width="300px"> | People are surrounding table with cake
+<img src="https://github.com/Likelion-Capsuler/Capsuler-model/blob/main/images/image2.png" height="300px"> | Wine glass on table with wine glass
+<img src="https://github.com/Likelion-Capsuler/Capsuler-model/blob/main/images/image3.png" width="300px"> | Woman is holding wii controller
 
 
 ## Contributors
